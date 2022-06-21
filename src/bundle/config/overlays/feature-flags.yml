@@ -1,0 +1,8 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@overlay/match by=overlay.subset({"kind": "ConfigMap", "metadata":{"name":"feature-flags"}}),expects="0+"
+---
+#@overlay/match missing_ok=True
+data:
+  send-cloudevents-for-runs: #@ data.values.cloudevents.enabled

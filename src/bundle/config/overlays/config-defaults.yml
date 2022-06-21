@@ -1,0 +1,8 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@overlay/match by=overlay.subset({"kind": "ConfigMap", "metadata":{"name":"config-defaults"}}),expects=1
+---
+#@overlay/replace
+data:
+  default-cloud-events-sink: #@ data.values.cloudevents.sink

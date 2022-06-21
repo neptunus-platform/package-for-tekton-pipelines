@@ -1,0 +1,17 @@
+#@data/values
+---
+#! Configure a storage location for artifact persistence.
+artifact:
+  #! Configure artifact persistence in a PVC.
+  pvc:
+    #! Size of the PVC volume.
+    size: 5Gi
+    #! Storage class of the PVC volume.
+    storageClassName: default
+
+#! Configure the generation of CloudEvents.
+cloudevents:
+  #! Enable CloudEvents for TaskRun, PipelineRun and Run lifecycle events.
+  enabled: "false"
+  #! The URL of the sink where to send CloudEvents.
+  sink: ""

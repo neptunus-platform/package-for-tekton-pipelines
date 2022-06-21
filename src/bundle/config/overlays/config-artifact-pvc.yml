@@ -1,0 +1,9 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@overlay/match by=overlay.subset({"kind": "ConfigMap", "metadata":{"name":"config-artifact-pvc"}}),expects=1
+---
+#@overlay/match missing_ok=True
+data:
+  size: #@ data.values.artifact.pvc.size
+  storageClassName: #@ data.values.artifact.pvc.storageClassName

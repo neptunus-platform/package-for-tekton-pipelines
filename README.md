@@ -10,8 +10,8 @@ This project provides a [Carvel package](https://carvel.dev/kapp-controller/docs
 
 The Tekton Pipelines package has the following configurable properties.
 
-| Value | Required/Optional | Default | Description |
-|-------|-------------------|---------|-------------|
+| Value | Required/Optional | Description |
+|-------|-------------------|-------------|
 | `artifact.pvc.size` | Optional | Size of the PVC volume for artifact persistence. |
 | `artifact.pvc.storageClassName` | Optional | Storage class of the PVC volume for artifact persistence. |
 | `cloudevents.enabled` | Optional | Enable the generation of CloudEvents for TaskRun, PipelineRun and Run lifecycle events. |
